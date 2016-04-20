@@ -12,7 +12,7 @@ class Mu0Assembler {
     while (fileScanner.hasNextLine()) {
       String line = fileScanner.nextLine();
       Instruction assembled = Parser.parse(line);
-      fileWriter.println(assembled.inHex());
+      fileWriter.println(assembled);
     }
     fileWriter.close();
   }
