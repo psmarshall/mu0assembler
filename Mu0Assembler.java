@@ -4,9 +4,10 @@ import java.io.*;
 class Mu0Assembler {
   
   public static void main(String[] args) throws IOException {
-    Scanner fileScanner = new Scanner(new File("prog.mu0asm"));
-    File outFile = new File("prog.mu0");
-    PrintWriter fileWriter = new PrintWriter("prog.mu0", "UTF-8");
+    String inFileName = args[0];
+    String outFileName = args[1];
+    Scanner fileScanner = new Scanner(new File(inFileName));
+    PrintWriter fileWriter = new PrintWriter(outFileName, "UTF-8");
 
     while (fileScanner.hasNextLine()) {
       String line = fileScanner.nextLine();
