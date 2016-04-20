@@ -19,7 +19,7 @@ class Parser {
     Instruction i = new Instruction();
     i.setOpCode(opCodeMap.get(line.substring(0, 3)));
     if (line.length() > 4) {
-      int integerRep = Integer.parseInt(line.substring(4, line.length()));
+      int integerRep = Integer.parseInt(line.substring(4, line.length()), 16);
       String paddedBinary = String.format("%12s", Integer.toBinaryString(integerRep)).replace(' ', '0');
       i.setOpAddr(paddedBinary);
     } else {
